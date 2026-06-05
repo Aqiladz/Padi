@@ -1346,15 +1346,15 @@ tbody tr:nth-child(even) {
 
         function saveToStorage() {
             syncActiveBillFromDOM();
-            try { localStorage.setItem('pengiraanHargaData', JSON.stringify({ modalBills, activeModalBillId })); } catch(e) {}
+            try { localStorage.setItem('pengiraanRacunPadiData', JSON.stringify({ modalBills, activeModalBillId })); } catch(e) {}
         }
 
         function loadFromStorage() {
             let saved;
-            try { saved = localStorage.getItem('pengiraanHargaData'); } catch(e) { return; }
+            try { saved = localStorage.getItem('pengiraanRacunPadiData'); } catch(e) { return; }
             if (!saved) return;
             let data;
-            try { data = JSON.parse(saved); } catch (e) { try { localStorage.removeItem('pengiraanHargaData'); } catch(e2) {} return; }
+            try { data = JSON.parse(saved); } catch (e) { try { localStorage.removeItem('pengiraanRacunPadiData'); } catch(e2) {} return; }
 
             // Only load modal bills (new format) or migrate from old modalRows format
 
