@@ -1,4 +1,4 @@
-const CACHE = 'pengiraan-v3';
+const CACHE = 'pengiraan-v20';
 const FILES = [
     './index.html',
     './manifest.json',
