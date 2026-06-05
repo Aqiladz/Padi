@@ -1,7 +1,7 @@
 {
-  "name": "Pengiraan Harga",
-  "short_name": "Pengiraan",
-  "description": "Pengiraan harga dan modal ladang",
+  "name": "Racun & Padi",
+  "short_name": "Raucn",
+  "description": "Pengiraan racun dan padi",
   "start_url": "./index.html",
   "id": "./index.html",
   "scope": "./",
