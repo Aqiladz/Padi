@@ -1,7 +1,7 @@
 {
-  "name": "Racun & Padi",
-  "short_name": "Raucn",
-  "description": "Pengiraan racun dan padi",
+  "name": "Padi & Racun",
+  "short_name": "Padi",
+  "description": "Pengiraan padi dan racun",
   "start_url": "./index.html",
   "id": "./index.html",
   "scope": "./",
