@@ -1661,7 +1661,7 @@ tbody tr:nth-child(even) {
             <div id="calcDisplay">0</div>
             <div class="calc-grid">
                 <button class="calc-btn func" onclick="calcAC()">AC</button>
-                <button class="calc-btn func" onclick="calcToggleSign()">+/&#8722;</button>
+                <button class="calc-btn func" onclick="calcBackspace()">⌫</button>
                 <button class="calc-btn func" onclick="calcPercent()">%</button>
                 <button class="calc-btn op" id="cBtnDiv" onclick="calcOp('/')">&#247;</button>
 
@@ -1765,9 +1765,9 @@ tbody tr:nth-child(even) {
 
         window.calcAC = function () { cs = reset(); render(); };
 
-        window.calcToggleSign = function () {
-            var n = parseFloat(cs.cur);
-            if (!isNaN(n) && n !== 0) cs.cur = fmt(-n);
+        window.calcBackspace = function () {
+            if (cs.done || cs.fresh) return;
+            cs.cur = cs.cur.length <= 1 || (cs.cur.length === 2 && cs.cur[0] === '-') ? '0' : cs.cur.slice(0, -1);
             render();
         };
 
