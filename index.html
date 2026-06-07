@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1393,6 +1393,10 @@ tbody tr:nth-child(even) {
 
             if (hasBills) {
                 var activeBill = getActiveBill();
+                if (!activeBill) {
+                    activeModalBillId = modalBills[0].id;
+                    activeBill = modalBills[0];
+                }
                 if (activeBill) {
                     var btn = document.createElement('button');
                     btn.className = 'tab-btn active';
@@ -1778,12 +1782,12 @@ tbody tr:nth-child(even) {
                         if (existing) {
                             existing.rows = existing.rows.concat(b.rows || []);
                         } else {
-                            b.id = Date.now() + Math.random();
+                            b.id = generateBillId();
                             modalBills.push(b);
                         }
                     });
                 } else {
-                    imported.forEach(function(b) { b.id = Date.now() + Math.random(); });
+                    imported.forEach(function(b) { b.id = generateBillId(); });
                     modalBills = modalBills.concat(imported);
                 }
                 if (!activeModalBillId && modalBills.length > 0) activeModalBillId = modalBills[0].id;
