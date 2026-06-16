@@ -584,6 +584,10 @@ tbody tr:nth-child(even) {
     display: flex;
     gap: 10px;
     margin-top: 32px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .btn-backup {
     flex: 1;
@@ -604,7 +608,7 @@ tbody tr:nth-child(even) {
 
 @media (min-width: 600px) {
     .backup-bar { justify-content: flex-end; }
-    .btn-backup { flex: none; }
+    .btn-backup { flex: 0 0 auto; min-width: 140px; }
 }
 
 @page {
